@@ -11,8 +11,8 @@ Example setup:
 - PCs and Servers connected to the switches
 
 Connections:
-- Router **Fa0/0** → Switch1 → PC0, PC1, PC2
-- Router **Fa0/1** → Switch2 → PC3, PC4, PC5
+- Router **Fa0/0** → Switch1 → PC0, PC1, server1
+- Router **Fa0/1** → Switch2 → PC3, PC4, server2
 
 ---
 
