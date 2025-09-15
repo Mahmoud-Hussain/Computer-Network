@@ -1,0 +1,62 @@
+Router>en 
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#int fa0/0
+Router(config-if)#ip 
+Router(config-if)#ip a
+Router(config-if)#ip add
+Router(config-if)#ip address 192.168.1.0 255.255.255.0
+Bad mask /24 for address 192.168.1.0
+Router(config-if)#ip address 192.168.1.0 255.255.255.0
+Bad mask /24 for address 192.168.1.0
+Router(config-if)#
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+Router(config-if)#no sh
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#int fa1/0
+Router(config-if)#exit
+Router(config)#
+Router(config)#
+Router(config)#int fa1/0
+Router(config-if)#ip add
+Router(config-if)#ip address 192.168.2.1 255.255.255.0
+Router(config-if)#no sh
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet1/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#ex
+Router(config)#ip dhcp ex
+Router(config)#ip dhcp excluded-address 192.168.1.1 192.168.1.10
+Router(config)#ip dhcp excluded-address 192.168.2.1 192.168.2.10
+Router(config)#
+Router(config)#
+Router(config)#ip dhcp pool left
+Router(dhcp-config)#net
+Router(dhcp-config)#network 192.168.1.0 255.255.255.0
+Router(dhcp-config)#def
+% Incomplete command.
+Router(dhcp-config)#def
+Router(dhcp-config)#default-router 192.168.1.1
+Router(dhcp-config)#dns
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#ex
+Router(config)#ip dhcp pool right
+Router(dhcp-config)#net
+Router(dhcp-config)#network 192.168.2.0 255.255.255.0
+Router(dhcp-config)#def
+Router(dhcp-config)#default-router 192.168.2.1
+Router(dhcp-config)#dns
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#ex
+Router(config)#ex
