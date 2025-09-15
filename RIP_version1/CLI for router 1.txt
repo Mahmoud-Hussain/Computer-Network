@@ -1,0 +1,63 @@
+Router>en 
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#net
+Router(config-router)#network 192.168.230.0
+Router(config-router)#network 192.168.220.0
+Router(config-router)#
+Router(config-router)#
+Router(config-router)#end
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router rip
+Router(config-router)#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router(config-router)#
+Router(config-router)#end
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface Serial2/0
+Router(config-if)#
+%SYS-5-CONFIG_I: Configured from console by console
+no shutdown
+Router(config-if)#
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface FastEthernet1/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface Serial2/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface Serial2/0
+Router(config-if)#
+%LINK-3-UPDOWN: Interface Serial2/0, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to down
+
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface Serial2/0
+Router(config-if)#ip address 192.168.220.1 255.255.255.0
+Router(config-if)#ip address 192.168.220.1 255.255.255.0
+Router(config-if)#
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface Serial2/0
+Router(config-if)#
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface Serial2/0
+Router(config-if)#ip address 192.168.220.2 255.255.255.0
+Router(config-if)#
+Router(config-if)#
